@@ -11,6 +11,7 @@ class Loader {
 
 		new Options();
 		new Pages();
+		new Notices();
 
 		// Add link under the bloc in the plugins page
 		add_filter("plugin_action_links_" . plugin_basename( KIENSO_COMARQUAGE_FILE ), [&$this, 'settings_link'] );
@@ -21,5 +22,4 @@ class Loader {
 		array_unshift($links, $settings_link);
 		return $links;
 	}
-
 }

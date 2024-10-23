@@ -12,7 +12,8 @@ class Updater {
 	function __construct() {
 
 		// Declare function to run weekly by WP Cron scheduler
-		add_action( 'comarquage_weekly_xml_update', [ &$this, 'run' ], 10 ); // Run weekly update
+		// DISABLED
+		// add_action( 'comarquage_weekly_xml_update', [ &$this, 'run' ], 10 ); // Run weekly update
 	}
 
 	/**

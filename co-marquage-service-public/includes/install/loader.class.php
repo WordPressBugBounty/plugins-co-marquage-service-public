@@ -30,7 +30,9 @@ class Loader {
 
 		// Scheduled XML Update and Run it now
 		wp_clear_scheduled_hook( 'comarquage_daily_xml_update' );
-		wp_schedule_event( time(), 'weekly', 'comarquage_weekly_xml_update' ); // Weekly download XMl files
+
+		// DISABLED
+		// wp_schedule_event( time(), 'weekly', 'comarquage_weekly_xml_update' ); // Weekly download XMl files
 	}
 
 	/**

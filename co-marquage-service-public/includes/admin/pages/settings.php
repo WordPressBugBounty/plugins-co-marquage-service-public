@@ -7,15 +7,6 @@ use \Kienso\Comarquage\Message;
 use \Kienso\Comarquage\Helpers;
 use \Kienso\Comarquage\Admin\Requires;
 
-$plugin_page_url = 'https://www.baseo.io/plugins/comarquage-service-public-wordpress/?utm_source=anc-plugin&utm_campaign=admin-page';
-Message::add(
-	'warning',
-	sprintf(
-		'<b>Attention :</b> Ce plugin n’est plus maintenu. Plus d’informations, vous rendre sur <a href="%s" target="_blank">www.baseo.io</a>.',
-		$plugin_page_url
-	)
-);
-
 ?>
 
 <style>
@@ -209,7 +200,8 @@ Message::add(
 					<br>
 					<form method="post">
 				    	<input type="hidden" name="action" value="comarquage-xml-update">
-				    	<input type="submit" class="button" value="Mettre à jour les donn&eacute;es provenant de service-public.fr">
+						<!-- DISABLED -->
+				    	<!-- <input type="submit" class="button" value="Mettre à jour les donn&eacute;es provenant de service-public.fr"> -->
 				    </form>
 					</td>
 					<td rowspan="2" style="vertical-align:top;">

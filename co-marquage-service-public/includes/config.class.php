@@ -11,10 +11,11 @@ Class Config {
     const CATEGORIES = [ 'part', 'pro', 'asso' ];
     const UPLOADS_FOLDER = 'comarquage';
 
+    // DISABLED
     const SP_ZIP = [
-        "part" => "https://api.wp.kienso.fr/comarquage/30/part.zip",
-        "pro" => "https://api.wp.kienso.fr/comarquage/30/pro.zip",
-        "asso" => "https://api.wp.kienso.fr/comarquage/30/asso.zip"
+        "part" => null, // "https://api.wp.kienso.fr/comarquage/30/part.zip",
+        "pro" => null, // "https://api.wp.kienso.fr/comarquage/30/pro.zip",
+        "asso" => null, // "https://api.wp.kienso.fr/comarquage/30/asso.zip"
     ];
     //public $comarquage_pivots_url = "https://lecomarquage.service-public.fr/donnees_locales_v3/all/";
     const SP_PIVOTS = "https://lecomarquage.service-public.fr/donnees_locales_v3/all/";

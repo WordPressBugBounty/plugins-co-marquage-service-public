@@ -54,6 +54,10 @@ Pour des questions graphique et de visibilité, nous conseillons l'affichage dan
 
 == Changelog ==
 
+= 0.5.75 =
+Release Date: 2024-10-23
+* Add an outdated message for the plugin
+
 = 0.5.74 =
 Release Date: 2024-04-16
 * Add a unmaintained message for the plugin
