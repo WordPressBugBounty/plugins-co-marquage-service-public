@@ -9,7 +9,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Comarquage service-public.fr
- * Version:           0.5.75
+ * Version:           0.5.76
  * Plugin URI:        https://www.kienso.fr/wordpress-co-marquage-service-public/
  * Description:       Affiche les informations de service-public.fr. Flux de comarquage : v3. Page de sommaire : [comarquage category="part/pro/asso"]. Fiche : [comarquage category="part" xml="F18910"]
  * Author:            Kienso
@@ -23,7 +23,7 @@ defined('ABSPATH') || exit();
 
 /* Constantes
  --------------------------------------------------------------------------- */
-const version = '0.5.75';
+const version = '0.5.76';
 
 /* Main Class
  --------------------------------------------------------------------------- */
