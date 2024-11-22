@@ -137,7 +137,7 @@ class Parser
         // Check if file exist
         if (!file_exists($file)) {
             if (WP_DEBUG) {
-                echo 'not exist : ' . $file . '<br>';
+                echo 'not exist : ' . esc_html($file) . '<br>';
             }
             return '';
         }

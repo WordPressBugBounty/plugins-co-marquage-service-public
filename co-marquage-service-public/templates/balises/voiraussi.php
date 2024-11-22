@@ -16,11 +16,11 @@ foreach ($data as $top_key => $voiraussi) :
                     ?>
                             <li>
                                 <p class="panel-link">
-                                    <a href="<?php echo $url . $link_val['attributes']['id']; ?>" target="_blank">
-                                        <?php echo $link_val['children']['titre'][0]['text']; ?>
+                                    <a href="<?php echo esc_url($url . $link_val['attributes']['id']); ?>" target="_blank">
+                                        <?php echo esc_html($link_val['children']['titre'][0]['text']); ?>
                                     </a>
                                 </p>
-                                <p class="panel-source"><?php echo $link_val['children']['theme'][0]['children']['titre'][0]['text']; ?></p>
+                                <p class="panel-source"><?php echo esc_html($link_val['children']['theme'][0]['children']['titre'][0]['text']); ?></p>
                             </li>
                     <?php
                         endforeach;

@@ -10,8 +10,8 @@
                 <?php foreach($data as $question) {  ?>
                 <li>
                     <p class="panel-link">
-                        <a href="<?php echo $url . $question['attributes']['id']; ?>">
-                            <?php echo $question['text']; ?>
+                        <a href="<?php echo esc_url($url . $question['attributes']['id']); ?>">
+                            <?php echo esc_html($question['text']); ?>
                         </a>
                     </p>
                 </li>

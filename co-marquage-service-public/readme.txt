@@ -4,7 +4,7 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: comarquage, co-marquage, service public, service-public, service, public, gov, kienso, demarche, guide
 Requires at least: 6.0
-Tested up to: 6.6
+Tested up to: 6.7
 
 Link to the French government service (co-marquage): service-public.fr
 
@@ -53,6 +53,11 @@ Vous pouvez signaler un bug ou proposer une amélioration depuis l'onglet suppor
 Pour des questions graphique et de visibilité, nous conseillons l'affichage dans un template de page sans colonne latérale.
 
 == Changelog ==
+= 0.5.77 =
+Release Date: 2024-11-20
+* Fix Cross-Site Scripting in admin. File notices.class.php
+* Fix escape variables in template files
+
 = 0.5.76 =
 Release Date: 2024-10-24
 * Fix bug on missing class Notices

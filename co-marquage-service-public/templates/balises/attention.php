@@ -5,11 +5,11 @@ foreach ($data as $key => $bloc_attention) :
 
         <p class="bloc-attention-title">
             <?php include(KIENSO_COMARQUAGE_DIR_ASSETS . "icons/exclamation-triangle.svg"); ?>
-            <?php echo '&nbsp;' . $bloc_attention['children']['titre'][0]['text'] . " : "; ?>
+            <?php echo '&nbsp;' . esc_html($bloc_attention['children']['titre'][0]['text']) . " : "; ?>
         </p>
 
         <p class="bloc-paragraphe bloc-attention-content">
-            <?php if( isset($bloc_attention['children']['paragraphe']) ) echo $bloc_attention['children']['paragraphe'][0]['text']; ?>
+            <?php if( isset($bloc_attention['children']['paragraphe']) ) echo esc_html($bloc_attention['children']['paragraphe'][0]['text']); ?>
         </p>
 
         <?php 

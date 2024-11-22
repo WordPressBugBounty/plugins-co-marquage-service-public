@@ -46,9 +46,9 @@ use \Kienso\Comarquage\Admin\Requires;
 
 		?>
 
-		<input type="hidden" name="comarquage_update_time[part]" value="<?php echo Config::$categories_update_time['part']; ?>">
-		<input type="hidden" name="comarquage_update_time[pro]" value="<?php echo Config::$categories_update_time['pro']; ?>">
-		<input type="hidden" name="comarquage_update_time[asso]" value="<?php echo Config::$categories_update_time['asso']; ?>">
+		<input type="hidden" name="comarquage_update_time[part]" value="<?php echo esc_html(Config::$categories_update_time['part']); ?>">
+		<input type="hidden" name="comarquage_update_time[pro]" value="<?php echo esc_html(Config::$categories_update_time['pro']); ?>">
+		<input type="hidden" name="comarquage_update_time[asso]" value="<?php echo esc_html(Config::$categories_update_time['asso']); ?>">
 
 		<div class="tab-content" id="comarquage-tab-general">
 
@@ -120,7 +120,7 @@ use \Kienso\Comarquage\Admin\Requires;
 											if (empty( Config::$options->comarquage_global_departement ) ) echo '<option value=""> Choisir un d&eacute;partement</option>';
 											foreach( Config::$code_departements as $code => $name ) {
 												$selected = ($code == Config::$options->comarquage_global_departement) ? 'selected' : '';
-												echo '<option value="' . $code . '" ' . $selected . '>' . $code . ' - ' . $name . '</option>';
+												echo '<option value="' . esc_html($code) . '" ' . esc_html($selected) . '>' . esc_html($code . ' - ' . $name) . '</option>';
 											} ?>
 										</select>
 									</label>
@@ -128,7 +128,7 @@ use \Kienso\Comarquage\Admin\Requires;
 
 								<p><label for="comarquage_global_code_insee">
 									Code INSEE :
-									<input name="comarquage_global_code_insee" type="text" id="comarquage_global_code_insee" value="<?php echo Config::$options->comarquage_global_code_insee; ?>" class="regular-text"> (ex: 77491)
+									<input name="comarquage_global_code_insee" type="text" id="comarquage_global_code_insee" value="<?php echo esc_html(Config::$options->comarquage_global_code_insee); ?>" class="regular-text"> (ex: 77491)
 								</label></p>
 								<p style="text-align: right; margin-top:10px;"><a href="http://www.insee.fr/fr/methodes/nomenclatures/cog/" target="_blank"> Liste des codes g&eacute;ographiques INSEE </a></p>
 							</div>
@@ -189,13 +189,13 @@ use \Kienso\Comarquage\Admin\Requires;
 						Derni&egrave;re mise à jour des fichiers XML du comarquage :
 					</u></p>
 					<p>
-						particulier : <?= (!empty(Config::$options->comarquage_update_time['part'])) ? date('Y-m-d H:i', Config::$options->comarquage_update_time['part']) : ''; ?>
+						particulier : <?= (!empty(Config::$options->comarquage_update_time['part'])) ? esc_html(date('Y-m-d H:i', Config::$options->comarquage_update_time['part'])) : ''; ?>
 					</p>
 					<p>
-						professionnel : <?= (!empty(Config::$options->comarquage_update_time['pro'])) ? date('Y-m-d H:i', Config::$options->comarquage_update_time['pro']) : ''; ?>
+						professionnel : <?= (!empty(Config::$options->comarquage_update_time['pro'])) ? esc_html(date('Y-m-d H:i', Config::$options->comarquage_update_time['pro'])) : ''; ?>
 					</p>
 					<p>
-						association : <?= (!empty(Config::$options->comarquage_update_time['asso'])) ? date('Y-m-d H:i', Config::$options->comarquage_update_time['asso']) : ''; ?>
+						association : <?= (!empty(Config::$options->comarquage_update_time['asso'])) ? esc_html(date('Y-m-d H:i', Config::$options->comarquage_update_time['asso'])) : ''; ?>
 					</p>
 					<br>
 					<form method="post">
@@ -207,12 +207,12 @@ use \Kienso\Comarquage\Admin\Requires;
 					<td rowspan="2" style="vertical-align:top;">
 						<div style="background:#fff; float:right; border:1px solid #ccc; max-width:350px;">
 							<div style="background-color:#fff; padding: 10px 30px;">
-								<p><img src="<?php echo KIENSO_COMARQUAGE_URL . '/assets/images/logo.png'; ?>" style="width:200px;"></p>
+								<p><img src="<?php echo esc_url(KIENSO_COMARQUAGE_URL . '/assets/images/logo.png'); ?>" style="width:200px;"></p>
 							</div>
 							<div style="background-color:#eee; padding: 20px 30px;">
 								<p> Développé par l'équipe de baseo.  </p>
 								<p style="margin-top:20px;">
-									<a target="_blank" href="<?= $plugin_page_url ?>" class="button-primary">
+									<a target="_blank" href="<?= esc_url($plugin_page_url) ?>" class="button-primary">
 										Plus d'informations
 									</a>
 								</p>

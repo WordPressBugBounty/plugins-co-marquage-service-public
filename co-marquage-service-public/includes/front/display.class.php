@@ -100,7 +100,7 @@ class Display {
 
 		// Run comarquage
 		?>
-		<div id="comarquage" class="comarquage espace-<?php echo $category; ?>">
+		<div id="comarquage" class="comarquage espace-<?php echo esc_html($category); ?>">
 			<?php
 			\Kienso\Comarquage\Front\Display::display($category, $xml)
 			?>

@@ -11,7 +11,7 @@ $internBaseURL = $this->url;
     <div class="co-content">
         <ul class="list-arrow list-top-dotted">
             <?php foreach ($data['children']['commentfairesi'] as $commentfairesi): ?>
-                <li><a href="<?php echo $internBaseURL.$commentfairesi['attributes']['id'] ?>"><?php echo $commentfairesi['text'] ?></a></li>
+                <li><a href="<?php echo esc_url($internBaseURL.$commentfairesi['attributes']['id']) ?>"><?php echo esc_html($commentfairesi['text']) ?></a></li>
             <?php endforeach; ?>
         </ul>
     </div><!-- co-content -->

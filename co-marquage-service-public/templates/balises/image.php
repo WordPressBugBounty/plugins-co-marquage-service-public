@@ -8,11 +8,11 @@ $img_alt = isset($img_childs['textederemplacement'][0]['text']) ? $img_childs['t
 <div class="bloc-image">
     <figure>
         <img
-            src="<?php echo $img_url; ?>"
-            alt="<?php echo $img_alt; ?>"
+            src="<?php echo esc_url($img_url); ?>"
+            alt="<?php echo esc_html($img_alt); ?>"
         />
         <?php if (isset($img_childs['legende'])): ?>
-            <figcaption> <?php echo $img_childs['legende'][0]['text']; ?> </figcaption>
+            <figcaption> <?php echo esc_html($img_childs['legende'][0]['text']); ?> </figcaption>
         <?php endif; ?>
 
         <?php if (isset($img_childs['description'])): ?>
@@ -22,11 +22,11 @@ $img_alt = isset($img_childs['textederemplacement'][0]['text']) ? $img_childs['t
                     type="button"
                     role="role"
                     data-co-action="slide"
-                    data-co-target="#<?php echo $img['token']; ?>"
+                    data-co-target="#<?php echo esc_html($img['token']); ?>"
                 >
                     Voir la version texte
                 </button>
-                <div class="co-collapse co-hide" id="<?php echo $img['token']; ?>">
+                <div class="co-collapse co-hide" id="<?php echo esc_html($img['token']); ?>">
                     <?php $this->parse_not_children('description', $img_childs['description']); ?>
                 </div>
             </div>

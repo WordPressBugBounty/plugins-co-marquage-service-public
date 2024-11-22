@@ -22,11 +22,11 @@ foreach($data as $val) {
 
             <?php $tokenglobal = $this->token(); ?>
             <p class="tool-slide">
-                <button class="btn-up" data-co-action="slideall-up" type="button" data-co-target="#<?php echo $tokenglobal; ?>">Tout replier <?php include(KIENSO_COMARQUAGE_DIR_ASSETS . "icons/chevron-up.svg"); ?></button>
-                <button class="btn-down" data-co-action="slideall-down" type="button" data-co-target="#<?php echo $tokenglobal; ?>" >Tout déplier <?php include(KIENSO_COMARQUAGE_DIR_ASSETS . "icons/chevron-down.svg"); ?> </button>
+                <button class="btn-up" data-co-action="slideall-up" type="button" data-co-target="#<?php echo esc_html($tokenglobal); ?>">Tout replier <?php include(KIENSO_COMARQUAGE_DIR_ASSETS . "icons/chevron-up.svg"); ?></button>
+                <button class="btn-down" data-co-action="slideall-down" type="button" data-co-target="#<?php echo esc_html($tokenglobal); ?>" >Tout déplier <?php include(KIENSO_COMARQUAGE_DIR_ASSETS . "icons/chevron-down.svg"); ?> </button>
             </p>
 
-            <div class="fiche-bloc bloc-principal" id="<?php echo $tokenglobal; ?>">
+            <div class="fiche-bloc bloc-principal" id="<?php echo esc_html($tokenglobal); ?>">
             <?php
             $first = false;
         }
@@ -35,14 +35,14 @@ foreach($data as $val) {
         <div class="fiche-item fiche-slide">
             <div class="fiche-item-title">
                 <h2>
-                    <button class="co-btn co-btn-slide" data-co-action="slide" type="button" data-co-target="#<?php echo $chapitre['token']; ?>" role="button">
-                        <span><?php echo $titre; ?> </span>
+                    <button class="co-btn co-btn-slide" data-co-action="slide" type="button" data-co-target="#<?php echo esc_html($chapitre['token']); ?>" role="button">
+                        <span><?php echo esc_html($titre); ?> </span>
                         <?php include(KIENSO_COMARQUAGE_DIR_ASSETS . "icons/chevron-down.svg"); ?>
                     </button>
                 </h2>
             </div>
 
-            <div class="fiche-item-content co-hide" id="<?php echo $chapitre['token']; ?>">
+            <div class="fiche-item-content co-hide" id="<?php echo esc_html($chapitre['token']); ?>">
                 <?php $this->parse( $chapitre ); ?>
             </div>
         </div>

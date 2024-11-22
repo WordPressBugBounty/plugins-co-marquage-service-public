@@ -171,7 +171,7 @@ class Search  {
 			}
 
 			// Display result line ?>
-			<li><a href="<?php the_permalink(); ?>?xml=<?php echo $result[1]; ?>"><?php echo $result[2]; ?></a></li>
+			<li><a href="<?php the_permalink(); ?>?xml=<?php echo esc_url($result[1]); ?>"><?php echo esc_html($result[2]); ?></a></li>
 
 			<?php
 		} ?>

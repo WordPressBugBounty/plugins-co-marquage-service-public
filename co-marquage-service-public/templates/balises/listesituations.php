@@ -8,9 +8,9 @@ switch ($data['attributes']['affichage']) {
             <div class='tabs'>
                 <ul class="nav nav-tabs">
                     <?php foreach($data['children']['situation'] as $key => $situation ) : ?>
-                        <li class="<?php echo ( ($key == 0) ? 'active': '') ; ?>" data-co-action="tab" data-co-target="#<?php echo $situation['token']; ?>">
+                        <li class="<?php echo ( ($key == 0) ? 'active': '') ; ?>" data-co-action="tab" data-co-target="#<?php echo esc_html($situation['token']); ?>">
                             <span>
-                                <?php echo $situation['children']['titre'][0]['text']; ?>
+                                <?php echo esc_html($situation['children']['titre'][0]['text']); ?>
                             </span>
                         </li>
                     <?php endforeach; ?>
@@ -18,7 +18,7 @@ switch ($data['attributes']['affichage']) {
 
                 <div class="tab-content">
                     <?php foreach($data['children']['situation'] as $key => $situation ) : ?>
-                        <div class="tab-pane <?php echo ( $key == 0 ) ? 'active' : ''; ?>" id="<?php echo $situation['token']; ?>">
+                        <div class="tab-pane <?php echo ( $key == 0 ) ? 'active' : ''; ?>" id="<?php echo esc_html($situation['token']); ?>">
                             <?php $this->parse( $situation['children']['texte'][0] ); ?>
                         </div><!-- tab-pane -->
                     <?php endforeach; ?>

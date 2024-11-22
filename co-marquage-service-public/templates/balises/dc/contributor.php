@@ -1,1 +1,1 @@
-<?php echo $data[0]['text']; ?>
+<?php echo esc_html($data[0]['text']); ?>

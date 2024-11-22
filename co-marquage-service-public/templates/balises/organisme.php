@@ -9,21 +9,20 @@ $orgMaps = (isset($oneOrg->Adresse->Localisation))? $oneOrg->Adresse->Localisati
         <td>
             <?php if (!empty($oneOrg->CoordonnéesNum->Téléphone)): ?>
                 <p>
-                    Tél. : <a href='tel:<?php echo str_replace(' ', '', $oneOrg->CoordonnéesNum->Téléphone); ?>'><?php echo $oneOrg->CoordonnéesNum->Téléphone; ?></a>
+                    Tél. : <a href='tel:<?php echo esc_html(str_replace(' ', '', $oneOrg->CoordonnéesNum->Téléphone)); ?>'><?php echo esc_html($oneOrg->CoordonnéesNum->Téléphone); ?></a>
                 </p>
             <?php endif; ?>
             <?php if(!empty($oneOrg->CoordonnéesNum->Télécopie)) : ?>
                 <p>
-                    Fax : <?php echo $oneOrg->CoordonnéesNum->Télécopie ?>
+                    Fax : <?php echo esc_html($oneOrg->CoordonnéesNum->Télécopie) ?>
                 </p>
             <?php endif; ?>
         </td>
         <td>
             <?php if (!empty($oneOrg->CoordonnéesNum->Url) || !empty($oneOrg->CoordonnéesNum->Email)): ?>
                 <p>
-                    <?php if(!empty($oneOrg->CoordonnéesNum->Email)) echo 'Courriel : <a href="mailto:'.$oneOrg->CoordonnéesNum->Email.'">'.$oneOrg->CoordonnéesNum->Email.'</a><br>' ?>
-
-                    <?php if(!empty($oneOrg->CoordonnéesNum->Url)) echo 'Site web : <a href="'.$oneOrg->CoordonnéesNum->Url.'" target="_blank">'.$oneOrg->CoordonnéesNum->Url.'</a><br>' ?>
+                    <?php if(!empty($oneOrg->CoordonnéesNum->Email)) echo 'Courriel : <a href="mailto:'.esc_html($oneOrg->CoordonnéesNum->Email).'">'.esc_html($oneOrg->CoordonnéesNum->Email).'</a><br>' ?>
+                    <?php if(!empty($oneOrg->CoordonnéesNum->Url)) echo 'Site web : <a href="'.esc_url($oneOrg->CoordonnéesNum->Url).'" target="_blank">'.esc_html($oneOrg->CoordonnéesNum->Url).'</a><br>' ?>
                 </p>
             <?php endif; ?>
         </td>
@@ -32,9 +31,9 @@ $orgMaps = (isset($oneOrg->Adresse->Localisation))? $oneOrg->Adresse->Localisati
 
     <?php if (!is_null($orgMaps)): ?>
 
-        <div id="org-maps-<?php echo $oneOrg['token'] ?>" class="co-org-maps"
-            data-co-gmaps-lat="<?php echo $orgMaps->Latitude ?>" data-co-gmaps-lon="<?php echo $orgMaps->Longitude ?>"
-            data-co-gmaps-zoom="<?php echo $orgMaps->Précision ?>">
+        <div id="org-maps-<?php echo esc_html($oneOrg['token']) ?>" class="co-org-maps"
+            data-co-gmaps-lat="<?php echo esc_html($orgMaps->Latitude); ?>" data-co-gmaps-lon="<?php echo esc_html($orgMaps->Longitude) ?>"
+            data-co-gmaps-zoom="<?php echo esc_html($orgMaps->Précision); ?>">
         </div>
 
     <?php endif; ?>
@@ -45,8 +44,8 @@ $orgMaps = (isset($oneOrg->Adresse->Localisation))? $oneOrg->Adresse->Localisati
 
             <p class="geo-perso-item-how">Adresse :</p>
             <p>
-                <?php echo $oneOrg->Adresse->Ligne ?><br>
-                <?php echo $oneOrg->Adresse->CodePostal.' '.$oneOrg->Adresse->NomCommune ?>
+                <?php echo esc_html($oneOrg->Adresse->Ligne) ?><br>
+                <?php echo esc_html($oneOrg->Adresse->CodePostal).' '.esc_html($oneOrg->Adresse->NomCommune) ?>
             </p>
         </td>
         <td>
@@ -57,9 +56,9 @@ $orgMaps = (isset($oneOrg->Adresse->Localisation))? $oneOrg->Adresse->Localisati
                     <p>
                         <?php
                         if ($plageJourn['début'] == $plageJourn['fin']) {
-                            echo 'Le '.$plageJourn['début'].' : ';
+                            echo 'Le '.esc_html($plageJourn['début']).' : ';
                         } else {
-                            echo 'Du '.$plageJourn['début'].' au '.$plageJourn['fin'].' : ';
+                            echo 'Du '.esc_html($plageJourn['début']).' au '.esc_html($plageJourn['fin']).' : ';
                         }
 
                         $firstH = true;
@@ -68,7 +67,7 @@ $orgMaps = (isset($oneOrg->Adresse->Localisation))? $oneOrg->Adresse->Localisati
                             $debut = (strlen($plageHorr['début']) > 5)? substr($plageHorr['début'], 0, -3) : $plageHorr['début'];
                             $fin = (strlen($plageHorr['fin']) > 5)? substr($plageHorr['fin'], 0, -3) : $plageHorr['fin'];
 
-                            echo $debut." &agrave; ".$fin;
+                            echo esc_html($debut)." &agrave; ".esc_html($fin);
                             $firstH = false;
                         endforeach; ?>
                     </p>
@@ -79,6 +78,6 @@ $orgMaps = (isset($oneOrg->Adresse->Localisation))? $oneOrg->Adresse->Localisati
     </table>
 
     <p class="geo-date">
-        Vérifié le <?php echo date("d-m-Y", strtotime($oneOrg['dateMiseAJour'])) ?> par <?php echo $oneOrg->EditeurSource; ?>
+        Vérifié le <?php echo esc_html(date("d-m-Y", strtotime($oneOrg['dateMiseAJour']))) ?> par <?php echo esc_html($oneOrg->EditeurSource); ?>
     </p>
 </div>

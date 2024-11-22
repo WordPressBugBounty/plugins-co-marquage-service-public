@@ -27,11 +27,11 @@ $internBaseURL = $this->url;
                         break;
                 }
             ?>
-                <h2><?php echo $thisTitre; ?></h2>
+                <h2><?php echo esc_html($thisTitre); ?></h2>
 
                 <ul class="list-arrow">
                     <?php foreach ($groupe['children']['serviceenligne'] as $service): ?>
-                        <li><a href="<?php echo $internBaseURL.$service['attributes']['id'] ?>"><?php echo $service['children']['titre'][0]['text'] ?></a></li>
+                        <li><a href="<?php echo esc_url($internBaseURL.$service['attributes']['id']) ?>"><?php echo esc_html($service['children']['titre'][0]['text']) ?></a></li>
                     <?php endforeach; ?>
                 </ul>
             <?php endforeach; ?>

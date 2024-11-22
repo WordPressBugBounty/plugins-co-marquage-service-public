@@ -7,8 +7,8 @@
         <ul id="listePartenaires" class="list-arrow">
         <?php foreach($data as $partenaire) { ?>
             <li>
-            <a href="<?php echo $partenaire['attributes']['url']; ?>" target="_blank" rel="noopener noreferrer" title="<?php echo $partenaire['attributes']['url']; ?> - Nouvelle fenêtre">
-                <?php echo $partenaire['attributes']['url']; ?>
+            <a href="<?php echo esc_url($partenaire['attributes']['url']); ?>" target="_blank" rel="noopener noreferrer" title="<?php echo esc_html($partenaire['attributes']['url']); ?> - Nouvelle fenêtre">
+                <?php echo esc_url($partenaire['attributes']['url']); ?>
                 <span aria-hidden="true" class="icon icon-external-link"></span>
             </a>
             </li>

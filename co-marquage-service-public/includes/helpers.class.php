@@ -64,7 +64,7 @@ Class Helpers {
             while ( $pages->have_posts() ) {
                 $pages->the_post();
                 $page_id = get_the_id();
-                echo '<option value="' . $page_id . '"';
+                echo '<option value="' . esc_html($page_id) . '"';
                 if ( $page_id == $id ) echo ' selected ';
                 echo '>';
                 echo get_the_title();

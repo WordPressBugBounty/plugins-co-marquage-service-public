@@ -6,7 +6,7 @@
         <h3>Particuliers</h3>
         <ul class="list-arrow">
             <?php foreach ($data as $ficheliee): ?>
-                <li><a href="<?php echo $url.$ficheliee['attributes']['id'] ?>"><?php echo $ficheliee['children']['titre'][0]['text'] ?></a></li>
+                <li><a href="<?php echo esc_url($url . $ficheliee['attributes']['id']) ?>"><?php echo esc_html($ficheliee['children']['titre'][0]['text']) ?></a></li>
             <?php endforeach; ?>
         </ul>
     </div>

@@ -7,9 +7,9 @@ $illustration = $data['children']['illustration']['0'];
         <div class="co-row">
             <div class="co-col-2">
                 <img
-                    src="https://www.service-public.fr/resources-vdd/<?php echo $illustration[
+                    src="https://www.service-public.fr/resources-vdd/<?php echo esc_url($illustration[
                         'attributes'
-                    ]['lienpublication']; ?>"
+                    ]['lienpublication']); ?>"
                 >
             </div>
             <div class="co-col-4">
@@ -23,9 +23,9 @@ $illustration = $data['children']['illustration']['0'];
             </div>
             <div class="co-col-2">
                 <img
-                    src="https://www.service-public.fr/resources-vdd/<?php echo $illustration[
+                    src="https://www.service-public.fr/resources-vdd/<?php echo esc_url($illustration[
                         'attributes'
-                    ]['lienpublication']; ?>"
+                    ]['lienpublication']); ?>"
                 >
             </div>
         </div>

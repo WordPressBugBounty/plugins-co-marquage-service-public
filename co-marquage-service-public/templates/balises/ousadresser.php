@@ -8,12 +8,12 @@
                 <div class="fiche-item fiche-slide">
                     <div class="fiche-item-title">
                         <h3>
-                            <button class="co-btn co-btn-slide" data-co-action="slide-org" type="button" role="button" data-co-target="#<?php echo $oneOrg['token'] ?>">
-                                <span><?php echo $oneOrg->Nom ?></span> <?php include(KIENSO_COMARQUAGE_DIR_ASSETS . "icons/chevron-down.svg"); ?>
+                            <button class="co-btn co-btn-slide" data-co-action="slide-org" type="button" role="button" data-co-target="#<?php echo esc_html($oneOrg['token']) ?>">
+                                <span><?php echo esc_html($oneOrg->Nom) ?></span> <?php include(KIENSO_COMARQUAGE_DIR_ASSETS . "icons/chevron-down.svg"); ?>
                             </button>
                         </h3>
                     </div>
-                    <div class="fiche-item-content co-hide" id="<?php echo $oneOrg['token']; ?>">
+                    <div class="fiche-item-content co-hide" id="<?php echo esc_html($oneOrg['token']); ?>">
                         <?php include(KIENSO_COMARQUAGE_TEMPLATES . 'balises/organisme.php'); ?>
                     </div>
                 </div>
@@ -28,18 +28,18 @@
                     <div class="fiche-item-title">
                         <h3>
                             <?php if (isset($ousadresser_childs['texte'])): // If have text content ?>
-                                <button class="co-btn co-btn-slide" data-co-action="slide-org" type="button" role="button" data-co-target="#<?php echo $ousadresser['token'] ?>">
-                                    <span><?php echo $ousadresser_childs['titre'][0]['text'] ?></span> <?php include(KIENSO_COMARQUAGE_DIR_ASSETS . "icons/chevron-down.svg"); ?>
+                                <button class="co-btn co-btn-slide" data-co-action="slide-org" type="button" role="button" data-co-target="#<?php echo esc_html($ousadresser['token']) ?>">
+                                    <span><?php echo esc_html($ousadresser_childs['titre'][0]['text']) ?></span> <?php include(KIENSO_COMARQUAGE_DIR_ASSETS . "icons/chevron-down.svg"); ?>
                                 </button>
                             <?php else: ?>
-                                <a class="co-btn co-btn-slide  co-btn-slide-link" href="<?php echo $ousadresser_childs['ressourceweb'][0]['attributes']['url'] ?>" target="_blank">
-                                    <span><?php echo $ousadresser_childs['titre'][0]['text'] ?></span> <div class="co-external-link"><?php include(KIENSO_COMARQUAGE_DIR_ASSETS . "icons/external-link.svg"); ?></div>
+                                <a class="co-btn co-btn-slide  co-btn-slide-link" href="<?php echo esc_url($ousadresser_childs['ressourceweb'][0]['attributes']['url']) ?>" target="_blank">
+                                    <span><?php echo esc_html($ousadresser_childs['titre'][0]['text']) ?></span> <div class="co-external-link"><?php include(KIENSO_COMARQUAGE_DIR_ASSETS . "icons/external-link.svg"); ?></div>
                                 </a>
                             <?php endif; ?>
                         </h3>
                     </div>
                     <?php if (isset($ousadresser_childs['texte'])): // If have text content ?>
-                        <div class="fiche-item-content co-hide" id="<?php echo $ousadresser['token']; ?>">
+                        <div class="fiche-item-content co-hide" id="<?php echo esc_html($ousadresser['token']); ?>">
                             <?php
                             $contacts_info = $ousadresser_childs['texte'][0]['children'];
 
@@ -53,7 +53,7 @@
                                     echo '<div class="co-organisme-info">';
                                     foreach ($thisContent as $oneChapitre) {
                                         $oneChapitre_childs = $oneChapitre['chapitre']['children'];
-                                        echo '<p class="geo-perso-item-how">'.$oneChapitre_childs[0]['titre'][0]['children']['paragraphe'][0]['text'].'</p>';
+                                        echo '<p class="geo-perso-item-how">'.esc_html($oneChapitre_childs[0]['titre'][0]['children']['paragraphe'][0]['text']).'</p>';
 
                                         $oneChapitre_title = array_shift($oneChapitre_childs);
                                         $oneChapitre['chapitre']['children'] = $oneChapitre_childs;

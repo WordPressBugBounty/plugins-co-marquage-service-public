@@ -23,35 +23,35 @@ $serviceURL = $data['children']['lienweb'][0]['attributes']['url'];
                 <div class="demarche-button">
                     <?php if ($data['attributes']['type'] == 'Téléservice' || $data['attributes']['type'] == 'Téléservice personnalisé sur SP'): ?>
                         <p class="service-button">
-                            <a href="<?php echo $serviceURL ?>" class="co-btn co-btn-primary" target="_blank">
+                            <a href="<?php echo esc_url($serviceURL) ?>" class="co-btn co-btn-primary" target="_blank">
                                 Accéder au service en ligne &nbsp;
                                 <?php include(KIENSO_COMARQUAGE_DIR_ASSETS . "icons/external-link.svg"); ?>
                             </a>
                         </p>
-                        <?php if (isset($data['children']['lienweb'][0]['children']['source'])) echo '<p class="service-source">'.$data['children']['lienweb'][0]['children']['source'][0]['text'].'</p>'?>
+                        <?php if (isset($data['children']['lienweb'][0]['children']['source'])) echo '<p class="service-source">'.esc_html($data['children']['lienweb'][0]['children']['source'][0]['text']).'</p>'?>
                     <?php elseif ($data['attributes']['type'] == 'Formulaire'): ?>
                         <p class="service-button">
-                            <a href="<?php echo $serviceURL ?>" class="co-btn co-btn-primary" target="_blank">
+                            <a href="<?php echo esc_url($serviceURL) ?>" class="co-btn co-btn-primary" target="_blank">
                                 Accéder au formulaire
                                 <?php
                                 $format = (isset($data['attributes']['format']) && $data['attributes']['format'] == 'application/pdf')? 'pdf - ' : '';
                                 $poids = (isset($data['attributes']['poids']))? $data['attributes']['poids'] : '';
                                 if($poids || $format) {
-                                    echo '('. $format . $poids .')';
+                                    echo esc_html('('. $format . $poids .')');
                                 }
                                 ?>
                                 &nbsp; <?php include(KIENSO_COMARQUAGE_DIR_ASSETS . "icons/external-link.svg"); ?>
                             </a>
                         </p>
-                        <?php if (isset($data['children']['lienweb'][0]['children']['source'])) echo '<p class="service-source">'.$data['children']['lienweb'][0]['children']['source'][0]['text'].'</p>'?>
+                        <?php if (isset($data['children']['lienweb'][0]['children']['source'])) echo '<p class="service-source">'.esc_html($data['children']['lienweb'][0]['children']['source'][0]['text']).'</p>'?>
                     <?php elseif ($data['attributes']['type'] == 'Modèle de document'): ?>
                         <p class="service-button">
-                            <a href="<?php echo $serviceURL ?>" class="co-btn co-btn-primary" target="_blank">
+                            <a href="<?php echo esc_url($serviceURL) ?>" class="co-btn co-btn-primary" target="_blank">
                                 Accéder au modèle de document &nbsp;
                                 <?php include(KIENSO_COMARQUAGE_DIR_ASSETS . "icons/external-link.svg"); ?>
                             </a>
                         </p>
-                        <?php if (isset($data['children']['lienweb'][0]['children']['source'])) echo '<p class="service-source">'.$data['children']['lienweb'][0]['children']['source'][0]['text'].'</p>'?>
+                        <?php if (isset($data['children']['lienweb'][0]['children']['source'])) echo '<p class="service-source">'.esc_html($data['children']['lienweb'][0]['children']['source'][0]['text']).'</p>'?>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>

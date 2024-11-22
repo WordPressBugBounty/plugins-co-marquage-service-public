@@ -10,13 +10,13 @@
                 <?php foreach($data as $plus) {  ?>
                 <li>
                     <p class="panel-link">
-                        <a href="<?php echo $plus['attributes']['url']; ?>" target="_blank">
-                            <?php echo $plus['children']['titre'][0]['text']; ?>
+                        <a href="<?php echo esc_url($plus['attributes']['url']); ?>" target="_blank">
+                            <?php echo esc_html($plus['children']['titre'][0]['text']); ?>
                             <?php include(KIENSO_COMARQUAGE_DIR_ASSETS . "icons/external-link.svg"); ?>
                         </a>
                     </p>
                     <p class="panel-source">
-                        <?php echo $plus['children']['source'][0]['text']; ?>
+                        <?php echo esc_html($plus['children']['source'][0]['text']); ?>
                     </p>
                 </li>
                 <?php } ?>

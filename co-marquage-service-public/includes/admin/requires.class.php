@@ -100,7 +100,7 @@ class Requires {
 	----------------------------------------------------- */
 	public static function br_trigger_error($message, $errno) {
 		if(isset($_GET['action']) && $_GET['action'] == 'error_scrape') {
-			echo '<strong>Co-marquage : </strong> ' . $message;
+			echo '<strong>Co-marquage : </strong> ' . esc_html($message);
 			exit;
 		} else {
 			trigger_error($message, $errno);

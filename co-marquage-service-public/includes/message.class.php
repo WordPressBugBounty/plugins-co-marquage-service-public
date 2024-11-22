@@ -18,9 +18,9 @@ class Message {
     public static function display() {
         foreach(Message::$messages as $type => $message) {
             if(is_admin()) {
-                echo '<div class="notice notice-'. $type .' is-dismissible"><p>' . $message . '</p></div>';
+                echo '<div class="notice notice-'. esc_html($type) .' is-dismissible"><p>' . esc_html($message) . '</p></div>';
             } else {
-                echo '<div class="co-alert co-alert-'. $type .'" role="alert">' . $message . '</div>';
+                echo '<div class="co-alert co-alert-'. esc_html($type) .'" role="alert">' . esc_html($message) . '</div>';
             }
         }
         Message::$messages = []; // Reset messages pool
